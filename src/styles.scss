@@ -1,0 +1,68 @@
+.App {
+  display: flex;
+  flex-direction: column; 
+  align-items: center;
+  justify-content: center;
+
+  section {
+    margin-top: 1rem;
+  }
+}
+
+.img {
+  height: 30vw;
+  margin: auto;
+}
+
+.btn {
+  width: 3rem;
+  height: 3rem;
+  cursor: pointer;
+  margin-top: 2rem;
+}
+
+.horizontal-slider {
+  width: 40vw;
+  margin: auto;
+}
+.example-mark {
+  cursor: pointer;
+  position: absolute;
+  background: #ffffff;
+  border: 5px solid #3774ff;
+  border-radius: 100%;
+  display: block;
+  box-shadow: 0 0 2px 0 rgb(0 0 0 / 44%);
+  top: 18px;
+}
+.example-thumb {
+  cursor: pointer;
+  position: absolute;
+  z-index: 100;
+  background: #ffffff;
+  border: 5px solid #3774ff;
+  border-radius: 100%;
+  display: block;
+  box-shadow: 0 0 2px 0 rgb(0 0 0 / 44%);
+}
+.example-thumb.active {
+  background-color: #3774ff;
+}
+.example-track {
+  position: relative;
+  background: #ddd;
+}
+.example-track.example-track-0 {
+  background: #83a9ff;
+}
+.horizontal-slider .example-track {
+  top: 20px;
+  height: 4px;
+}
+.horizontal-slider .example-thumb {
+  top: 12px;
+  width: 10px;
+  outline: none;
+  height: 10px;
+  line-height: 38px;
+}

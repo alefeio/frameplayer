@@ -1,25 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+import { useContext, useEffect, useState } from "react";
+import ThumbContext from "./context/thumb";
 
-function App() {
+import { FramePlayer } from "./components/FramePlayer";
+import { images } from "./components/Images";
+
+import './styles.scss'
+
+export function App() {
+  const { state, setState } = useContext(ThumbContext);
+
+  function alterImgs(imgs) {
+    setState({ ...state, imgs })
+  }
+
+  useEffect(() => {
+    alterImgs(images)
+  }, [])
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <FramePlayer frames={images} fps={0.2} />
     </div>
   );
 }
-
-export default App;
