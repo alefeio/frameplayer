@@ -27,6 +27,22 @@ export function FramePlayer({ frames, fps }) {
         clearInterval(timerRef.current)
     }
 
+    function back() {
+        const newThumb = state.thumb === 0 ? frames.length - 1 : state.thumb - 1
+
+        setStatus(false)
+        clearInterval(timerRef.current)
+        setState({ ...state, thumb: newThumb })
+    }
+
+    function advance() {
+        const newThumb = state.thumb === frames.length - 1 ? 0 : state.thumb + 1
+
+        setStatus(false)
+        clearInterval(timerRef.current)
+        setState({ ...state, thumb: newThumb })
+    }
+
     function alterThumbs(thumb) {
         setState({ ...state, thumb })
     }
@@ -37,7 +53,7 @@ export function FramePlayer({ frames, fps }) {
                 <img src={frames[state.thumb]} className="img" />
             </section>
             <Slider qtd={frames.length} action={pause} />
-            <Play status={status} action={!status ? play : pause} />
+            <Play status={status} pl={!status ? play : pause} rt={back} ad={advance} />
         </>
     )
 }
