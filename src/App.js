@@ -1,6 +1,3 @@
-import { useContext, useEffect, useState } from "react";
-import ThumbContext from "./context/thumb";
-
 import { FramePlayer } from "./components/FramePlayer";
 import { images } from "./components/Images";
 
